@@ -1,11 +1,8 @@
 public class BlackBear extends Bear {
 
-    private AttackStrategy attackStrategy;
-
-    public BlackBear() {
-        super();
+    public BlackBear(String name) {
+        super(name, new InjuryAtack());
         this.weight = 50;
-        attackStrategy = new InjuryAtack();
     }
 
     @Override
@@ -13,8 +10,8 @@ public class BlackBear extends Bear {
         System.out.println("I'm black bear and my weight is:" + weight);
     }
 
-    @Override
-    public void attack(Animal animal) {
-        attackStrategy.attack(this, animal);
-    }
+//    @Override
+//    public void attack(Animal animal) {
+//        attackStrategy.attack(this, animal);
+//    }
 }

@@ -11,7 +11,7 @@ class ZooAplication {
     @Test
     void shouldBeAliveAfterCreation() {
         //given
-        Animal animal = new PolarBear();
+        Animal animal = new PolarBear("Polarny");
         //then
         assertTrue(animal.isAlive());
     }
@@ -19,7 +19,7 @@ class ZooAplication {
     @Test
     void shouldBeAliveAfterEating() {
         //given
-        Animal animal = new PolarBear();
+        Animal animal = new PolarBear("Polarny");
         //when
         animal.eat();
         //then
@@ -29,7 +29,7 @@ class ZooAplication {
     @Test
     void shouldBeDeadWhenNotEatBeforeTenDays() {
         //given
-        Animal animal = spy(new PolarBear());
+        Animal animal = spy(new PolarBear("Polarny"));
      //   mock(PolarBear.class);
         //when
         LocalDateTime value = LocalDateTime.now().minusDays(11);
@@ -52,7 +52,7 @@ assertThrows(CantEatException.class, animal::eat);
     @Test
     void shouldReturn200WhenPolarBear() {
         //given
-        Animal animal = new PolarBear();
+        Animal animal = new PolarBear("Polarny");
         //when
         int weight = animal.getWeight();
         //then
@@ -62,7 +62,7 @@ assertThrows(CantEatException.class, animal::eat);
 
     void shouldReturn100WhenBrownBear() {
         //given
-        Animal animal = new BrownBear();
+        Animal animal = new BrownBear("Brązowy");
         //when
         int weight = animal.getWeight();
         //then

@@ -2,8 +2,8 @@ import java.time.LocalDateTime;
 
 public abstract class Animal {
 
-    protected int weight;
-    protected LocalDateTime lastEatTime;
+    int weight;
+    LocalDateTime lastEatTime;
 
     public Animal() {
         lastEatTime = LocalDateTime.now();

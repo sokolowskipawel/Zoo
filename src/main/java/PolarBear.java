@@ -1,10 +1,9 @@
 public class PolarBear extends Bear {
-    private AttackStrategy attackStrategy;
 
-    public PolarBear() {
-        super();
+
+    public PolarBear(String name) {
+        super(name, new KillAtack());
         this.weight = 200;
-        attackStrategy = new KillAtack();
     }
 
     @Override
@@ -13,9 +12,10 @@ public class PolarBear extends Bear {
      //   System.out.println("I'm polar bear and my weight is:" + weight);
     }
 
-    @Override
-    public void attack(Animal animal) {
-        attackStrategy.attack(this, animal);
-     //   return "Zabiłem " + animal.getClass().getSimpleName();
-    }
+//    @Override
+//    public void attack(Animal animal) {
+//        attackStrategy.attack(this, animal);
+//     //   return "Zabiłem " + animal.getClass().getSimpleName();
+//    }
+
 }
