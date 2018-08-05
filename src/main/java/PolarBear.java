@@ -1,10 +1,10 @@
-import java.time.LocalDateTime;
-
-public class PolarBear extends Animal implements Attackaible  {
+public class PolarBear extends Bear {
+    private AttackStrategy attackStrategy;
 
     public PolarBear() {
         super();
         this.weight = 200;
+        attackStrategy = new KillAtack();
     }
 
     @Override
@@ -14,7 +14,8 @@ public class PolarBear extends Animal implements Attackaible  {
     }
 
     @Override
-    public String attack(Animal animal) {
-        return "Zabiłem " + animal.getClass().getSimpleName();
+    public void attack(Animal animal) {
+        attackStrategy.attack(this, animal);
+     //   return "Zabiłem " + animal.getClass().getSimpleName();
     }
 }
